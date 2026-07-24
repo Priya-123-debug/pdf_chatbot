@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# environment variables (contains your API keys — never commit these)
+.env
+.env.local
+.env.*.local
+
+# uploads (no longer used since pdf is handled in memory, but ignore just in case)
+uploads/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor folders
+.vscode/
+.idea/
+
+# build output (if you ever add a frontend build step in this repo)
+dist/
+build/
