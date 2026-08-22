@@ -70,6 +70,7 @@ async function generateSummary(fullText) {
 async function generateAnswer(context, question) {
   const response = await hf.chatCompletion({
     model: 'Qwen/Qwen2.5-7B-Instruct',
+     provider: 'together',
     messages: [
       {
         role: 'user',
