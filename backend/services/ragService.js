@@ -18,7 +18,7 @@ const qdrant = new QdrantClient({
 
 const EMBEDDING_DIM = 384; // BAAI/bge-small-en-v1.5 output vector size
 const COLLECTION_NAME = 'pdf_chunks'; // one shared collection for every user's pdfs, filtered by documentId
-const GROQ_MODEL = 'llama-3.1-8b-instant'; // fast + free on Groq; swap to 'llama-3.3-70b-versatile' for stronger reasoning
+const GROQ_MODEL = 'openai/gpt-oss-20b'; 
 
 async function ensureCollection() {
   const collections = await qdrant.getCollections();
@@ -64,6 +64,7 @@ async function callGroq(prompt, maxTokens) {
     },
     body: JSON.stringify({
       model: GROQ_MODEL,
+      
       messages: [{ role: 'user', content: prompt }],
       max_tokens: maxTokens,
     }),
