@@ -54,6 +54,7 @@ async function generateSummary(fullText) {
   const trimmed = fullText.slice(0, 8000); // keep the prompt small/cheap
   const response = await hf.chatCompletion({
     model: 'Qwen/Qwen2.5-7B-Instruct',
+      provider: 'together',
     messages: [
       {
         role: 'user',
